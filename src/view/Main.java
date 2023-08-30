@@ -4,6 +4,11 @@ import javax.swing.JOptionPane;
 
 import controller.RedesController;
 
+//Para fazer:
+// - Colocar mais comentários;
+// - Erm, saber como fazer esses caractéres "corrompidos" voltarem ao normal;
+// - Um pouco de design talvez?
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -11,13 +16,13 @@ public class Main {
 		
 		//Chama o método e coloca numa String
 		
-		String[] escolha = {"Opção 1", "Opção 2", "Opção 3"};
+		String[] escolha = {"Verificar SO", "Chamar IP", "Chamar Ping", "Sair"};
 		
 		int escolhaPane = JOptionPane.showOptionDialog(null, "Escolha:",
-				"Guhh?", JOptionPane.INFORMATION_MESSAGE, 
+				"Beep Boop", JOptionPane.INFORMATION_MESSAGE, 
 				JOptionPane.CANCEL_OPTION , null, escolha, escolha[0]) + 1;
 		
-		while (escolhaPane != 3 && escolhaPane != 0) {
+		while (escolhaPane != 4 && escolhaPane != 0) {
 		  
 			switch(escolhaPane) {
 			case 1:
@@ -28,10 +33,12 @@ public class Main {
 				RC.ip();
 				break;
 			case 3:
+				RC.ping();
+				break;
+			case 4:
 				break;
 			}
 			
-			//bleh
 			
 			escolhaPane = JOptionPane.showOptionDialog(null, "Escolha:",
 					"Guhh?", JOptionPane.INFORMATION_MESSAGE, 
